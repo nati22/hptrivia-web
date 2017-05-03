@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'hptrivia_app',
-    'social.apps.django_app.default'
+    'social.apps.django_app.default',
+    'webpack_loader'
 ]
 
 MIDDLEWARE = [
@@ -127,4 +128,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = ['./hptrivia_app/static/hptrivia_app']
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'hptrivia_app/static/hptrivia_app')
+]
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'bundles/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
+    }
+}

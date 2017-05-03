@@ -3,3 +3,5 @@ venv/
 **.sqlite3
 **/workspace.xml
 **/tasks.xml
+webpack-stats.json
+bundles

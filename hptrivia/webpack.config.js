@@ -19,18 +19,32 @@ module.exports = {
     module: {
         loaders: [
             {
+                // to transform JSX into JS
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
                 query: {
                     presets: ['react']
                 }
-            } // to transform JSX into JS
+            },
+            {
+                // loads CSS and injects it into the DOM via a <link> tag
+                test: /\.css$/,
+                loader: 'style-loader'
+            },
+            {
+                // parses a CSS file and apply various transforms to it
+                test: /\.css$/,
+                loader: 'css-loader',
+                query: {
+                    modules: true,
+                    localIdentName: '[name]__[local]___[hash:base64:5]'
+                }
+            }
         ],
     },
-
     resolve: {
         modules: ['node_modules', 'bower_components'],
         extensions: ['.js', '.jsx']
-    },
+    }
 };

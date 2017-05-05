@@ -1,13 +1,14 @@
 var React = require('react');
-var styles = require('../css/app.css');
+var appStyles = require('../css/app.less');
+var stylinStyles = require('../css/stylin.less');
 
 module.exports = React.createClass({
    render: function(){
        return (
-           <div>
-               <h1>Hello, world!</h1>
-               <div className='blue-p'>
-                   <p className={styles.blueP}>This text will be blue</p>
+           <div className={stylinStyles.parent}>
+               <h1 className={stylinStyles.header}>Hello, world! I'm green!</h1>
+               <div>
+                   <p className={appStyles.blueP}>This text will be blue</p>
                </div>
            </div>
        )

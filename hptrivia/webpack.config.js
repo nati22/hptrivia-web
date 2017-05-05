@@ -28,18 +28,22 @@ module.exports = {
                 }
             },
             {
-                // loads CSS and injects it into the DOM via a <link> tag
-                test: /\.css$/,
-                loader: 'style-loader'
-            },
-            {
-                // parses a CSS file and apply various transforms to it
-                test: /\.css$/,
-                loader: 'css-loader',
-                query: {
-                    modules: true,
-                    localIdentName: '[name]__[local]___[hash:base64:5]'
-                }
+                test: /\.less$/,
+                loaders: [
+                    {
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: 'css-loader',
+                        query: {
+                            modules: true,
+                            localIdentName: '[name]__[local]___[hash:base64:5]'
+                        }
+                    },
+                    {
+                        loader: 'less-loader'
+                    }
+                ]
             }
         ],
     },

@@ -5,3 +5,4 @@ venv/
 **/tasks.xml
 webpack-stats.json
 bundles
+npm-debug.log
